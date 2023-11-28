@@ -1,7 +1,5 @@
 package com.lynnlo;
 
-import com.fazecast.jSerialComm.*;
-
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,15 +9,13 @@ import javafx.fxml.FXMLLoader;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/fxml/RV1.fxml"));
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("fxml/RV1.fxml"));
 
         Scene scene = new Scene(root, 640, 400);
 
         stage.setTitle("FXML Welcome");
         stage.setScene(scene);
         stage.show();
-
-        System.out.println("Hello World!");
     }
 
     public static void main(String[] args) {
